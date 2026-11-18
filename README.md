@@ -16,7 +16,7 @@ Cada tema responde lo mismo, en este orden:
 | # | Tema | Estado |
 |---|---|---|
 | 1 | [Almacenamiento seguro (Keystore / Keychain)](docs/temas/01-almacenamiento-seguro.md) | ✅ |
-| 2 | Certificate pinning | 🔜 |
+| 2 | [Certificate pinning](docs/temas/02-certificate-pinning.md) | ✅ |
 | 3 | Autenticación OAuth2 + PKCE | 🔜 |
 | 4 | Integridad del dispositivo (Play Integrity / App Attest) | 🔜 |
 | 5 | Crash reporting | 🔜 |
@@ -39,8 +39,8 @@ Cada tema responde lo mismo, en este orden:
 Requisitos: JDK 17, Android SDK y Xcode (para iOS).
 
 ```bash
-./gradlew :shared:jvmTest                 # tests comunes (rápido)
-./gradlew :shared:iosSimulatorArm64Test   # tests en el simulador iOS
+./gradlew :shared:jvmTest                 # tests comunes y pinning con OkHttp (rápido)
+./gradlew :shared:iosSimulatorArm64Test   # tests en el simulador iOS (el de pinning necesita red)
 ./gradlew :shared:macosArm64Test          # tests del Keychain
 ./gradlew :shared:connectedAndroidDeviceTest  # tests del Keystore (emulador abierto)
 ./gradlew detekt                          # análisis estático
